@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Estadística</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Calculadora Estadistica</h1>
+        <p>Ingrese números separados por comas para obtener estadisticas</p>
+
+    </header>
+
+    <main class="container">
+        <div class="card">
+
+            {% if error %}
+                <div class="alert">{{ error }}</div>
+            {% endif %}
+
+            <form action="/" method="POST">
+                <label for="numeros">Números:</label>
+                <input type="text" id="numeros" name="numeros" placeholder="Ejemplo: 1, 2, 3, 4, 5">
+                <button type="submit">Calcular</button>
+            </form>
+
+            {% if lista %}
+                <hr>
+                <h2>Resultados</h2>
+                <p><strong>Números ingresados:</strong> {{ lista }}</p>
+                <p><strong>Suma:</strong> {{ suma }}</p>
+                <p><strong>Media:</strong> {{ media }}</p>
+                <p><strong>Mediana:</strong> {{ mediana }}</p>
+                <p><strong>Desviación estándar:</strong> {{ desviacion }}</p>
+            {% endif %}
+        </div>
+    </main>
+
+
+</body>
+</html>
