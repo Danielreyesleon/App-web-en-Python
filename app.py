@@ -3,10 +3,6 @@ import numpy as np
 
 
 
-"""profesor el html se ve de esta manera por que soy desarrollador web"""
-
-
-
 
 app = Flask(__name__)
 
